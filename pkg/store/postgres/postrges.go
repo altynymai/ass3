@@ -37,7 +37,7 @@ func init() {
 //		"PGSERVICEFILE":        "servicefile",
 func initDefaultEnv() error {
 	if len(os.Getenv("PGHOST")) == 0 {
-		if err := os.Setenv("PGHOST", "postgres"); err != nil {
+		if err := os.Setenv("PGHOST", "localhost"); err != nil {
 			return errors.WithStack(err)
 		}
 	}
@@ -57,7 +57,7 @@ func initDefaultEnv() error {
 		}
 	}
 	if len(os.Getenv("PGPASSWORD")) == 0 {
-		if err := os.Setenv("PGPASSWORD", "password"); err != nil {
+		if err := os.Setenv("PGPASSWORD", "123456789"); err != nil {
 			return errors.WithStack(err)
 		}
 	}
